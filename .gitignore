@@ -1,0 +1,17 @@
+# Instructions / design docs (not part of the deployable site)
+00_CC指示書.md
+*_指示書.md
+*_設計書.md
+*_進行記録.md
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Originals
+*.psd
+*.ai
+*.fig
