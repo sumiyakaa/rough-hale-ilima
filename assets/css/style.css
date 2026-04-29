@@ -1204,6 +1204,233 @@ ul, ol { list-style: none; }
   border-top: 1px dashed var(--ilima-line);
 }
 
+/* ---------- Reservation: Tabs ---------- */
+.reservation-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 6px;
+  background: var(--ilima-paper);
+  padding: 5px;
+  border-radius: 10px;
+  margin-bottom: 4px;
+}
+
+.reservation-tab {
+  appearance: none;
+  background: transparent;
+  border: none;
+  padding: 11px 8px;
+  font-size: 13px;
+  font-family: inherit;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ilima-text-2);
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.reservation-tab:hover {
+  color: var(--ilima-text);
+}
+
+.reservation-tab.is-active {
+  background: var(--ilima-white);
+  color: var(--ilima-rust);
+  box-shadow: 0 2px 8px var(--ilima-shadow);
+}
+
+.reservation-tab:focus-visible {
+  outline: 2px solid var(--ilima-amber);
+  outline-offset: 2px;
+}
+
+/* ---------- Reservation: Tab Panels ---------- */
+.reservation-tabpanel {
+  display: none;
+  flex-direction: column;
+  gap: 14px;
+  animation: reservationFadeIn 0.35s ease;
+}
+
+.reservation-tabpanel.is-active {
+  display: flex;
+}
+
+@keyframes reservationFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.reservation-tabpanel__desc {
+  font-size: 12.5px;
+  color: var(--ilima-text-2);
+  line-height: 1.85;
+  letter-spacing: 0.03em;
+}
+
+/* ---------- Reservation: Mock Calendar ---------- */
+.reservation-mock {
+  background: linear-gradient(180deg, #FFFFFF, #FDF9F0);
+  border: 1px solid var(--ilima-line);
+  border-radius: 10px;
+  padding: 16px 18px 18px;
+}
+
+.reservation-mock--reserva {
+  background: linear-gradient(180deg, #FFFFFF, #F4F8F8);
+}
+
+.reservation-mock__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--ilima-line);
+}
+
+.reservation-mock__brand {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--ilima-text);
+  font-family: var(--font-body-en), var(--font-jp);
+}
+
+.reservation-mock__badge {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: var(--ilima-amber);
+  color: var(--ilima-white);
+}
+
+.reservation-mock--reserva .reservation-mock__badge {
+  background: var(--ilima-sage);
+}
+
+.reservation-mock__cal-head {
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--ilima-text);
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+}
+
+.reservation-mock__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.reservation-mock__day {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ilima-text);
+  background: rgba(245, 199, 110, 0.12);
+  border-radius: 5px;
+}
+
+.reservation-mock__day--head {
+  background: transparent;
+  font-size: 9.5px;
+  color: var(--ilima-text-2);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  aspect-ratio: auto;
+  padding: 4px 0;
+}
+
+.reservation-mock__day--off {
+  background: transparent;
+  color: var(--ilima-line);
+  font-size: 9px;
+}
+
+.reservation-mock__day--mute {
+  background: rgba(229, 217, 192, 0.4);
+  color: var(--ilima-text-2);
+  text-decoration: line-through;
+  text-decoration-color: rgba(107, 88, 64, 0.4);
+}
+
+.reservation-mock__day--full {
+  background: rgba(200, 114, 58, 0.18);
+  color: var(--ilima-rust);
+  font-weight: 700;
+}
+
+.reservation-mock__day--active {
+  background: var(--ilima-rust);
+  color: var(--ilima-white);
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(200, 114, 58, 0.35);
+}
+
+.reservation-mock--reserva .reservation-mock__day--active {
+  background: var(--ilima-sage);
+  box-shadow: 0 4px 10px rgba(168, 184, 154, 0.4);
+}
+
+.reservation-mock__legend {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 12px;
+  font-size: 10px;
+  color: var(--ilima-text-2);
+  letter-spacing: 0.04em;
+}
+
+.reservation-mock__legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.reservation-mock__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.reservation-mock__dot--ok    { background: rgba(245, 199, 110, 0.5); }
+.reservation-mock__dot--full  { background: rgba(200, 114, 58, 0.5); }
+.reservation-mock__dot--off   { background: rgba(229, 217, 192, 0.6); }
+
+/* ---------- Reservation: Mail Mock ---------- */
+.reservation-mock--mail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 36px 24px;
+  gap: 14px;
+}
+
+.reservation-mock__mail-icon {
+  font-size: 36px;
+  color: var(--ilima-rust);
+  line-height: 1;
+}
+
+.reservation-mock__mail-text {
+  font-size: 13px;
+  color: var(--ilima-text-2);
+  line-height: 1.85;
+  letter-spacing: 0.03em;
+}
+
 /* =========================================================
    Section 10: Voice
    ========================================================= */

@@ -364,18 +364,116 @@
 
     <div class="reservation-grid">
       <div class="reservation-text reveal">
-        <p>ご予約は、オンライン予約フォームから24時間受け付けています。</p>
-        <p>初めての方は、まず30分の無料初回ご相談からどうぞ。お電話・メールでのお問い合わせも歓迎しております。</p>
+        <p>ご予約は、オンライン予約システムと連携し、24時間受け付けが可能です。</p>
+        <p>業界標準の <strong>Coubic（STORES 予約）</strong>または <strong>RESERVA（レゼルバ）</strong>との連携実装に対応しております。ご希望のサービスをお選びください。</p>
         <div class="reservation-figure" role="img" aria-label="穏やかな光が差し込む静かなイメージ"></div>
       </div>
 
       <div class="reservation-card reveal">
-        <h3 class="reservation-card__title">いますぐ予約する</h3>
-        <a href="#" class="btn btn--primary reservation-card__btn">初回ご相談（無料）を予約する →</a>
-        <span class="reservation-card__divider">or</span>
-        <a href="#" class="btn btn--outline reservation-card__btn">通常セッションを予約する</a>
-        <a href="#" class="btn btn--ghost reservation-card__btn--mail">メールで問い合わせる →</a>
-        <p class="reservation-card__note">※予約システムは現在準備中です。お問い合わせフォームよりご連絡ください。</p>
+        <h3 class="reservation-card__title">予約システム 連携イメージ</h3>
+
+        <div class="reservation-tabs" role="tablist" aria-label="予約システム選択">
+          <button type="button" class="reservation-tab is-active" role="tab" aria-selected="true" data-tab="coubic">Coubic</button>
+          <button type="button" class="reservation-tab" role="tab" aria-selected="false" data-tab="reserva">RESERVA</button>
+          <button type="button" class="reservation-tab" role="tab" aria-selected="false" data-tab="mail">メール</button>
+        </div>
+
+        <!-- Coubic Panel -->
+        <div class="reservation-tabpanel is-active" data-panel="coubic" role="tabpanel" aria-label="Coubic連携イメージ">
+          <div class="reservation-mock">
+            <div class="reservation-mock__header">
+              <span class="reservation-mock__brand">STORES 予約 (Coubic)</span>
+              <span class="reservation-mock__badge">連携イメージ</span>
+            </div>
+            <div class="reservation-mock__calendar">
+              <div class="reservation-mock__cal-head">2026年 5月</div>
+              <div class="reservation-mock__grid">
+                <span class="reservation-mock__day reservation-mock__day--head">月</span>
+                <span class="reservation-mock__day reservation-mock__day--head">火</span>
+                <span class="reservation-mock__day reservation-mock__day--head">水</span>
+                <span class="reservation-mock__day reservation-mock__day--head">木</span>
+                <span class="reservation-mock__day reservation-mock__day--head">金</span>
+                <span class="reservation-mock__day reservation-mock__day--head">土</span>
+                <span class="reservation-mock__day reservation-mock__day--head">日</span>
+                <span class="reservation-mock__day reservation-mock__day--off">—</span>
+                <span class="reservation-mock__day reservation-mock__day--off">—</span>
+                <span class="reservation-mock__day reservation-mock__day--off">—</span>
+                <span class="reservation-mock__day">1</span>
+                <span class="reservation-mock__day">2</span>
+                <span class="reservation-mock__day reservation-mock__day--mute">3</span>
+                <span class="reservation-mock__day reservation-mock__day--mute">4</span>
+                <span class="reservation-mock__day">5</span>
+                <span class="reservation-mock__day reservation-mock__day--full">6</span>
+                <span class="reservation-mock__day">7</span>
+                <span class="reservation-mock__day reservation-mock__day--active">8</span>
+                <span class="reservation-mock__day">9</span>
+                <span class="reservation-mock__day reservation-mock__day--mute">10</span>
+                <span class="reservation-mock__day reservation-mock__day--mute">11</span>
+              </div>
+              <div class="reservation-mock__legend">
+                <span><i class="reservation-mock__dot reservation-mock__dot--ok"></i>予約可</span>
+                <span><i class="reservation-mock__dot reservation-mock__dot--full"></i>満枠</span>
+                <span><i class="reservation-mock__dot reservation-mock__dot--off"></i>休</span>
+              </div>
+            </div>
+          </div>
+          <p class="reservation-tabpanel__desc">月間250万人規模のユーザー基盤を持つ予約サービス。カレンダー埋め込み（iframe）・予約ボタン誘導の双方に対応可能です。</p>
+          <a href="#" class="btn btn--primary reservation-card__btn">Coubicで予約する →</a>
+        </div>
+
+        <!-- RESERVA Panel -->
+        <div class="reservation-tabpanel" data-panel="reserva" role="tabpanel" aria-label="RESERVA連携イメージ" hidden>
+          <div class="reservation-mock reservation-mock--reserva">
+            <div class="reservation-mock__header">
+              <span class="reservation-mock__brand">RESERVA</span>
+              <span class="reservation-mock__badge">連携イメージ</span>
+            </div>
+            <div class="reservation-mock__calendar">
+              <div class="reservation-mock__cal-head">2026年 5月</div>
+              <div class="reservation-mock__grid">
+                <span class="reservation-mock__day reservation-mock__day--head">月</span>
+                <span class="reservation-mock__day reservation-mock__day--head">火</span>
+                <span class="reservation-mock__day reservation-mock__day--head">水</span>
+                <span class="reservation-mock__day reservation-mock__day--head">木</span>
+                <span class="reservation-mock__day reservation-mock__day--head">金</span>
+                <span class="reservation-mock__day reservation-mock__day--head">土</span>
+                <span class="reservation-mock__day reservation-mock__day--head">日</span>
+                <span class="reservation-mock__day reservation-mock__day--off">—</span>
+                <span class="reservation-mock__day reservation-mock__day--off">—</span>
+                <span class="reservation-mock__day reservation-mock__day--off">—</span>
+                <span class="reservation-mock__day">1</span>
+                <span class="reservation-mock__day reservation-mock__day--full">2</span>
+                <span class="reservation-mock__day reservation-mock__day--mute">3</span>
+                <span class="reservation-mock__day reservation-mock__day--mute">4</span>
+                <span class="reservation-mock__day">5</span>
+                <span class="reservation-mock__day">6</span>
+                <span class="reservation-mock__day reservation-mock__day--active">7</span>
+                <span class="reservation-mock__day">8</span>
+                <span class="reservation-mock__day">9</span>
+                <span class="reservation-mock__day reservation-mock__day--mute">10</span>
+                <span class="reservation-mock__day reservation-mock__day--mute">11</span>
+              </div>
+              <div class="reservation-mock__legend">
+                <span><i class="reservation-mock__dot reservation-mock__dot--ok"></i>予約可</span>
+                <span><i class="reservation-mock__dot reservation-mock__dot--full"></i>満枠</span>
+                <span><i class="reservation-mock__dot reservation-mock__dot--off"></i>休</span>
+              </div>
+            </div>
+          </div>
+          <p class="reservation-tabpanel__desc">350業種以上に対応する予約システム。事前クレジットカード決済（RESERVAペイメント）の導入実装も対応可能です。</p>
+          <a href="#" class="btn btn--primary reservation-card__btn">RESERVAで予約する →</a>
+        </div>
+
+        <!-- Mail Panel -->
+        <div class="reservation-tabpanel" data-panel="mail" role="tabpanel" aria-label="メール問い合わせ" hidden>
+          <div class="reservation-mock reservation-mock--mail">
+            <div class="reservation-mock__mail-icon" aria-hidden="true">✉</div>
+            <p class="reservation-mock__mail-text">予約システムを介さず、メールにて直接ご相談いただけます。<br>初回30分の無料相談も承っております。</p>
+          </div>
+          <a href="#" class="btn btn--primary reservation-card__btn">メールで問い合わせる →</a>
+        </div>
+
+        <p class="reservation-card__note">※上記はイメージ表示です。Coubic（STORES予約）／RESERVA いずれの予約システムとも実装連携が可能です。ご希望のサービスをお知らせください。</p>
       </div>
     </div>
   </div>

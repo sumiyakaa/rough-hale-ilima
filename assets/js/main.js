@@ -75,6 +75,34 @@
     });
   });
 
+  /* ---------- Reservation tab switcher ---------- */
+  const reservationTabs = document.querySelectorAll('.reservation-tab');
+  const reservationPanels = document.querySelectorAll('.reservation-tabpanel');
+  if (reservationTabs.length && reservationPanels.length) {
+    reservationTabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-tab');
+        if (!target) return;
+
+        reservationTabs.forEach((t) => {
+          const active = t === tab;
+          t.classList.toggle('is-active', active);
+          t.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+
+        reservationPanels.forEach((p) => {
+          const active = p.getAttribute('data-panel') === target;
+          p.classList.toggle('is-active', active);
+          if (active) {
+            p.removeAttribute('hidden');
+          } else {
+            p.setAttribute('hidden', '');
+          }
+        });
+      });
+    });
+  }
+
   /* ---------- Smooth anchor scroll with header offset ---------- */
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener('click', (e) => {
